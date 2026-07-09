@@ -1,0 +1,53 @@
+# ============================================================
+# .gitignore — AXI4 Memory Controller
+# Excludes Vivado-generated and EDA tool artifacts
+# ============================================================
+
+# Vivado generated
+*.jou
+*.log
+*.str
+*.pb
+*.dcp
+*.xpe
+*.rpt
+*.xml
+.Xil/
+vivado_*.backup.*
+webtalk*.xml
+xsim.dir/
+xsim_*.jou
+xsim_*.log
+*.wdb
+*.vcd
+*.ghw
+
+# Vivado IP cache
+.cache/
+.gen/
+.ip_user_files/
+ip_cache/
+ipshared/
+
+# Synthesis / implementation outputs (regenerate locally)
+synth/
+impl/
+*.bit
+*.bin
+
+# OpenROAD flow outputs
+output/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
+*~

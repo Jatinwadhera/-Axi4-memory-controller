@@ -1,0 +1,40 @@
+name: RTL Lint (Verilator)
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  verilator-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Verilator
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y verilator
+
+      - name: Lint RTL sources
+        run: |
+          verilator --lint-only -sv \
+            rtl/apb_regs.sv \
+            rtl/axi4_slave_if.sv \
+            rtl/cache_ctrl.sv \
+            rtl/miss_handler.sv \
+            rtl/prefetch_engine.sv \
+            rtl/axi4_mem_ctrl_top.sv \
+            --top-module axi4_mem_ctrl_top \
+            -Wall \
+            2>&1 | tee lint_report.txt
+
+      - name: Upload lint report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: lint-report
+          path: lint_report.txt
