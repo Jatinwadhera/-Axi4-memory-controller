@@ -1,10 +1,5 @@
 # AXI4 Memory Controller with Adaptive Cache
 
-[![Vivado](https://img.shields.io/badge/Vivado-2020.2-blue)](https://www.xilinx.com/products/design-tools/vivado.html)
-[![SystemVerilog](https://img.shields.io/badge/HDL-SystemVerilog-orange)](https://en.wikipedia.org/wiki/SystemVerilog)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Target FPGA](https://img.shields.io/badge/FPGA-xc7k325tffg900--2-purple)](https://www.xilinx.com/products/silicon-devices/fpga/kintex-7.html)
-
 A fully AXI4-compliant memory controller with adaptive 4-way set-associative write-back cache, verified with constrained-random testbenches. Targets the Xilinx Kintex-7 FPGA (`xc7k325tffg900-2`) using Vivado 2020.2.
 
 ---
@@ -25,14 +20,14 @@ A fully AXI4-compliant memory controller with adaptive 4-way set-associative wri
 
 ## Features
 
-- ✅ Full **AXI4 slave interface** with VALID/READY handshake protocol
-- ✅ **4-way set-associative write-back cache** with AXI4 burst refill
-- ✅ **87% cache hit rate** under sequential workload
-- ✅ **APB register interface** for runtime configuration and status readout
-- ✅ **Prefetch engine** for speculative line fetching
-- ✅ Self-checking **constrained-random XSIM testbench** with SystemVerilog Assertions (SVA)
-- ✅ Parameterised design — configurable cache size, line width, associativity
-- ✅ RTL-to-GDS flow ready (OpenROAD / Sky130 PDK compatible)
+-  Full **AXI4 slave interface** with VALID/READY handshake protocol
+-  **4-way set-associative write-back cache** with AXI4 burst refill
+-  **87% cache hit rate** under sequential workload
+-  **APB register interface** for runtime configuration and status readout
+-  **Prefetch engine** for speculative line fetching
+-  Self-checking **constrained-random XSIM testbench** with SystemVerilog Assertions (SVA)
+-  Parameterised design — configurable cache size, line width, associativity
+-  RTL-to-GDS flow ready (OpenROAD / Sky130 PDK compatible)
 
 ---
 
@@ -199,6 +194,3 @@ Electronics and Computer Engineering, Thapar Institute of Engineering and Techno
 
 ---
 
-## License
-
-This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
